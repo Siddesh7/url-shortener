@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorty</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <h1>URL Shortener</h1>
+        <form action="/" method="post">
+            <input type="text" name="longurl" placeholder="Enter the long URL" required><br>
+            <input type="text" name="did" placeholder="Enter desired URL like 'wdtFTD' (Optional) " ><br>
+            <button type="submit">Create</button>
+            <p>If the requested URL already exists in our Database, this app automatically generates a new URL</p>
+
+        </form>
+      {%if request.method == "POST" %}
+        <h4>Shortlink : <a href="{{ li }}" target="blank">{{ li }}</a></h4>
+      {% endif%}
+        
+    </div>
+</body>
+</html>
